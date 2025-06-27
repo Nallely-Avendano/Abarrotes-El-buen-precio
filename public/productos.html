@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hola, <span id="name"></span></p>
+    <p>Email: <span id="email"></span></p>
+    <p>Phone: <span id="phone"></span></p>
+    <p>Address: <span id="address"></span></p>
+
+    <script src="js/requests.js"></script>
+    <script>
+        getMyDataRequest()
+        .then(res => {
+            console.log(res);
+            if (res.status == 200)
+                showMyData(res.body);
+            else
+                window.location.href = '/';
+        })
+        .catch(() => {});
+
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const addressInput = document.getElementById('address');
+        
+        function showMyData(body) {
+            nameInput.innerHTML = body.name;
+            emailInput.innerHTML = body.email;
+            phoneInput.innerHTML = body.phone;
+            addressInput.innerHTML = body.address;
+        }
+    </script>
+</body>
+</html>

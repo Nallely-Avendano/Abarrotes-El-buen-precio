@@ -1,0 +1,24 @@
+/* Sobreescribe estilos solo para registro */
+.cuadro-naranja {
+  padding: 40px;
+}
+
+.formulario-registro {
+  text-align: left;
+}
+
+.formulario-registro label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+textarea {
+  min-height: 80px;
+}
+
+.password-help {
+  display: block;
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 4px;
+}

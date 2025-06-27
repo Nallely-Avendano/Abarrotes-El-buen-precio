@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Abarrotes El Buen Precio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="contenedor-principal">
+    <div class="cuadro-naranja">
+      <h1>ABARROTES EL BUEN PRECIO</h1>
+      <p class="leyenda">Los mejores productos al mejor precio</p>
+      
+      <img src="img/logo.png" alt="Logo" class="logo">
+      <br>
+      <img src="img/login.png" alt="Login" class="imagen-login">
+      
+      <form id="login-form" class="formulario-login">
+        <input id="email" type="text" placeholder="Email" required>
+        <input id="password" type="password" placeholder="Contraseña" required>
+        <button type="submit" class="btn-ingresar">Ingresar</button>
+      </form>
+      
+      <a href="registro.html" class="btn-registro">¿No tienes cuenta? Regístrate</a>
+    </div>
+  </div>
+
+  <script src="js/requests.js"></script>
+  <script>
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    document.getElementById('login-form')
+    .addEventListener('submit', (event) => {
+      event.preventDefault();
+      loginRequest(emailInput.value, passwordInput.value)
+      .then(res => {
+        if (res.status == 200) {
+          sessionStorage.setItem('authorization', `Bearer ${res.body.token}`);
+          window.location.href = '/productos.html';
+        }
+        else
+          alert(res.body.error);
+      }).catch(() => {});
+    });
+  </script>
+</body>
+</html>

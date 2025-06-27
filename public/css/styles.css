@@ -1,0 +1,72 @@
+/* Estilos globales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Fondo negro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #000; /* Texto negro */
+}
+
+.contenedor-principal {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.cuadro-naranja {
+  background-color: #FFA500; /* Naranja */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.logo {
+  max-width: 150px;
+  margin: 15px 0;
+}
+
+.imagen-login {
+  max-width: 100px;
+  margin: 15px 0;
+}
+
+/* Formularios */
+.formulario-login, .formulario-registro {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn-ingresar, .btn-registrar, .btn-registro {
+  background-color: #000;
+  color: #FFA500;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.btn-registro {
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #000;
+}
